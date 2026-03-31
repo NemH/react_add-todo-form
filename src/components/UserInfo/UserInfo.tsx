@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { User } from '../../types/userTypes';
 
-type Props = { user?: User };
+type Props = { user: User };
 
 export const UserInfo: FC<Props> = ({ user }) => {
   if (!user) {

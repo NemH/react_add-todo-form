@@ -11,7 +11,12 @@ import { NewTodoForm } from './components/AddTodoForm/AddTodoForm';
 // import todosFromServer from './api/todos';
 
 export const App = () => {
-  const [todoList, setTodoList] = React.useState<Todo[]>(todos);
+  const initialTodos = todos.map(to => ({
+    ...to,
+    user: users.find(u => u.id === to.userId) || null,
+  }));
+
+  const [todoList, setTodoList] = React.useState<Todo[]>(initialTodos);
   const [userList] = React.useState<User[]>(users);
 
   return (
