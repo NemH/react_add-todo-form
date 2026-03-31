@@ -19,6 +19,10 @@ export const App = () => {
   const [todoList, setTodoList] = React.useState<Todo[]>(initialTodos);
   const [userList] = React.useState<User[]>(users);
 
+  if (!todoList) {
+    return null;
+  }
+
   return (
     <div className="App">
       <h1>Add todo form</h1>
